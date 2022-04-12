@@ -83,7 +83,7 @@ cp_back=tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_save_path,save_we
 history=model.fit(x_train,y_train,batch_size=32,epochs=4,validation_data=(x_test,y_test),validation_freq=1,callbacks=[cp_back])
 
 
-file=open('./checkpoint_AlexNet/weights,txt')
+file=open('./checkpoint_AlexNet/weights,txt','w')
 
 for v in model.trainable_variables:
     file.write(str(v.name)+'\n')
